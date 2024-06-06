@@ -1,4 +1,4 @@
-# data_analyst_python
+# Задания
  Publication of the solutions to educational tasks for the karpovcourse 
 
-Темы пройденные на курсе:
+
