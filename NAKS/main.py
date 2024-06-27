@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 import pandas as pd
 from select_date import find_table_by_date
+from select_date import open_web
 
 
 def find_table_body(html_text):
@@ -54,7 +55,8 @@ if __name__ == '__main__':
     date_from = '01.01.2024'
     date_to = '31.12.2024'
 
-    html_text = find_table_by_date(html, date_from, date_to)
+    browser = open_web(html)
+    browser, html_text = find_table_by_date(browser, date_from, date_to)
     start_table = find_table_body(html_text)
     dict_columns = read_title(start_table)
     df = read_data(start_table)
