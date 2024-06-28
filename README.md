@@ -1,5 +1,5 @@
 # Привет! Меня зовут Аня)
-Большая часть заданий была взята из курса "Аналитик данных" Karpov.Courses (https://karpov.courses)
+Часть заданий была взята из курса "Аналитик данных" Karpov.Courses (https://karpov.courses)
 1. AB-test
   **Инструменты и библиотеки** (A/B-тест, визуализация, статистический тест, plotly, seaborn, matplotlib, numpy, scipy.stats, pingouin, statsmodels.api)
 - **dating_ab.ipynb**
