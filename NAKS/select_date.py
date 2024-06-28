@@ -6,6 +6,7 @@ import time
 import re
 
 
+# Открывет сайт по ссылке
 def open_web(html):
     option = Options()
     option.add_argument("--disable-infobars")
@@ -14,6 +15,7 @@ def open_web(html):
     return browser
 
 
+# Находит поля с датами и заполняет их
 def find_table_by_date(browser, date_from, date_to):
     # id первой кнопки аттестации до - arrFilter_DATE_ACTIVE_TO_1
     elem_data_1 = browser.find_element(By.ID, 'arrFilter_DATE_ACTIVE_TO_1')
@@ -31,6 +33,7 @@ def find_table_by_date(browser, date_from, date_to):
     return browser, html_text
 
 
+# Находит список кнопок для перехода на страничку с другими технологиями
 def find_button_to_switch(browser):
     staff = browser.find_element(By.CLASS_NAME, 'all-staff')
     container = staff.find_element(By.CLASS_NAME, 'container')
