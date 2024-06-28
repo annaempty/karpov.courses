@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 import pandas as pd
-from select_date import find_table_by_date
-from select_date import open_web
+from select_date import find_table_by_date, open_web, switch_webpage
+
 
 
 def find_table_body(html_text):
