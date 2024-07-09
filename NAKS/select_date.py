@@ -35,13 +35,18 @@ def find_table_by_date(browser, date_from, date_to):
 
 # Находит список кнопок для перехода на страничку с другими технологиями
 def find_button_to_switch(browser):
-    staff = browser.find_element(By.CLASS_NAME, 'all-staff')
-    container = staff.find_element(By.CLASS_NAME, 'container')
-    row = container.find_element(By.CLASS_NAME, 'row')
-    plase = row.find_element(By.CLASS_NAME, 'col-md-8 col-xl-9 order-2 order-md-1') # Ломается тут
-    plase_1 = plase.find_element(By.ID, 'app_reestr_centers') # Или тут
-    list_elem = plase_1.find_element(By.CSS_SELECTOR, 'p')
-    return browser, list_elem
+    # staff = browser.find_element(By.CLASS_NAME, 'all-staff')
+    # container = staff.find_element(By.CLASS_NAME, 'container')
+    # row = container.find_element(By.CLASS_NAME, 'row')
+    # plase = row.find_element(By.CLASS_NAME, 'col-md-8 col-xl-9 order-2 order-md-1') # Ломается тут
+    # plase_1 = plase.find_element(By.ID, 'app_reestr_centers') # Или тут
+    # list_elem = plase_1.find_element(By.CSS_SELECTOR, 'p')
+    # return browser, list_elem
+
+    ref = browser.find_element(By.XPATH, "//a[text()='След.']")
+    print(ref.text)
+
+    return browser, ref
 
 
 def check_number_entries(elem):
@@ -67,4 +72,4 @@ if __name__ == '__main__':
     html = 'https://naks.ru/registry/reg/st/?PAGEN_1=1&arrSORT=&arrFilter_pf%5Bnum_acst%5D%5B%5D=3173145&arrFilter_pf%5Bnum_sv%5D=%C0%D6%D1%D2-87-&arrFilter_DATE_ACTIVE_TO_1=01.01.2027&arrFilter_DATE_ACTIVE_TO_2=31.12.2027&arrFilter_ff%5BNAME%5D=&arrFilter_ff%5BPREVIEW_TEXT%5D=&set_filter=%D4%E8%EB%FC%F2%F0&set_filter=Y'
     browser = open_web(html)
     browser, list_elem = find_button_to_switch(browser)
-    browser, list_elem = switch_webpage(browser, list_elem)
+    # browser, list_elem = switch_webpage(browser, list_elem)
